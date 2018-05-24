@@ -1,0 +1,14 @@
+<h1>Welcome to  <%=@dog.name %>'s page!  </h1>
+<h3>  Name: <%=  @dog.name %> | Age <%= @dog.age  %> | Breed <%= @dog.breed %> </h3>
+
+<% if @dog.employees.length > 0  %>
+  <h3>These are the dog's employees!</h3>
+  <ul>
+  <% @dog.employees.each do |employee| %>
+  <li><%= link_to employee.first_name, employee %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%=link_to "Edit this dog", edit_dog_path(@dog)%>
+<%=link_to "All dogs", dogs_path%>

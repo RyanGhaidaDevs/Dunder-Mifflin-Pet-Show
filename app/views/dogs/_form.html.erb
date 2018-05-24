@@ -1,0 +1,22 @@
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |e| %>
+      <li><%= e %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @dog do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :age %>
+  <%= f.text_field :age %><br>
+
+  <%= f.label :breed %>
+  <%= f.text_field :breed %><br>
+
+  <%= f.collection_check_boxes :employee_ids, @employees, :id, :first_name %><br>
+
+  <%= f.submit %>
+<% end %>

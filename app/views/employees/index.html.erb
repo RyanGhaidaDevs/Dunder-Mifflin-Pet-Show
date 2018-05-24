@@ -1,0 +1,13 @@
+<% if @employees.empty? %>
+ <h4>There are no employees containing the term <%= params[:search] %>.</h4>
+<% end %>
+
+<h1>These are all the Employees </h1>
+
+<%=link_to "Create new employee", new_employee_path%>
+
+<ul>
+  <% @employees.each do |e| %>
+    <li> First Name: <%= link_to e.first_name, e %> | Last Name:<%= e.last_name %> |  Alias: <%= e.alias %> | Title: <%= e.title %> |  Office: <%= e.office %>   </li>
+  <% end %>
+</ul>

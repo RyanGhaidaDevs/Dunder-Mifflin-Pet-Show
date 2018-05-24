@@ -1,0 +1,10 @@
+<h1>These are all the Dogs </h1>
+<%=link_to "Create New Dog", new_dog_path%>
+
+<ul>
+  <% sorted_dogs = @dogs.sort_by{ |x| -x.employees.count } %>
+  <% sorted_dogs.each do |d| %>
+
+    <li> Dog Name: <%= link_to d.name, d %> | Age <%= d.age  %> | Breed <%= d.breed %> | Number of employees: <%= d.employees.count %> </li>
+  <% end %>
+</ul>

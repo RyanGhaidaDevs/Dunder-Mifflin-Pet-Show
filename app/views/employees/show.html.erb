@@ -1,0 +1,11 @@
+<h1>Welcome to  <%=@employee.first_name %>'s page!  </h1>
+
+<img src="<%= @employee.img_url%>"> 
+<h3> First Name: <%= @employee.first_name %> | Last Name:<%= @employee.last_name %> | Alias: <%= @employee.alias %> | Title: <%= @employee.title %> | Office: <%= @employee.office %>  </h3>
+
+<% if @employee.dog  %>
+<%= link_to @employee.dog.name, dog_path(@employee.dog) %>
+<% end %>
+
+<%=link_to "Edit this Employee", edit_employee_path(@employee)%>
+<%=link_to "Back to all employees", employees_path%>
